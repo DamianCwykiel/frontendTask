@@ -1,0 +1,71 @@
+/* Header */
+
+.header {
+    background: $green;
+    border-bottom: 1.5px solid $purple;
+    color: $white;
+    padding: $md 0;
+    text-align: center;
+}
+
+.header__title {
+    font-family: 'Spectral', serif;
+    font-size: $md-lg;
+    margin-bottom: .4rem;
+}
+
+.header__title::first-letter {
+    font-size: $md-ex-lg;
+    color: $purple;
+}
+
+.header__subtitle {
+    color: $purple;
+    font-size: $sm;
+    font-weight: 600;
+}
+
+/* Actions Bar */
+.actions {
+    background-color: $dark-gray;
+    padding: $md;
+}
+
+#message {
+    align-items: center;
+    border: none;
+    color: $goldenrod; 
+    display: flex;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 500;
+    max-width: $ex-lg;
+    margin: 0 auto;
+    min-height: $md-ex-lg;
+    padding: $md 1.6rem;
+    justify-content: center; 
+    font-style: italic;
+}
+
+//MEDIA QUERIES
+@media (max-width: 900px) and (orientation: landscape) {
+    html {
+        font-size: 70%;
+      }
+    body{
+        text-align: center;
+    }
+    .container {
+        justify-content: center;
+      }
+      .button {
+        margin: 0 0 2rem 0;
+        padding: $md;
+    }
+    .input {
+        font-size: 1.8rem;
+        height: 5rem;
+        padding: $md .5rem;
+        min-width: $lg-sm;
+    }
+}
