@@ -35,6 +35,7 @@ input[type='file'] {
     margin: 0 $sm;
     outline: none;
     transition: background .3s ease, color .3s ease;
+    width: 15rem;
     &hover {
         background: $dark-purple;
     }
@@ -45,6 +46,8 @@ input[type='file'] {
     background: $gray;
     display: none;
     margin: 1rem $lg-sm-button;
+    justify-content: center;
+    width: 15rem;
     &hover {
         background: $dark-purple;
     }
