@@ -20,7 +20,10 @@ body {
 /* Container */
 
 .container {
+  display: block;
   max-width: $ex-lg;
   margin: 0 auto;
   padding: $md $md-lg;
+  overflow-x: hidden;
+  justify-content: left;
 }

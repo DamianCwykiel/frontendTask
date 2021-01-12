@@ -16,12 +16,6 @@ input[type='file'] {
     visibility: hidden; 
 }
 
-#frontend-task {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-}
-
 .button1 {
     background: $purple;
     border: none;
@@ -32,10 +26,9 @@ input[type='file'] {
     font-weight: 500;
     padding: $sm;
     letter-spacing: 1px;
-    margin: 0 $sm;
+    margin: 0 5rem;
     outline: none;
     transition: background .3s ease, color .3s ease;
-    width: 15rem;
     &hover {
         background: $dark-purple;
     }
@@ -45,9 +38,6 @@ input[type='file'] {
     @extend .button1;
     background: $gray;
     display: none;
-    margin: 1rem $lg-sm-button;
-    justify-content: center;
-    width: 15rem;
     &hover {
         background: $dark-purple;
     }
@@ -58,4 +48,6 @@ input[type='file'] {
     font-size: 1rem;
     font-weight: 600;
     padding: 2rem;
+    word-break: break-all;
+    word-wrap: break-word;
 }

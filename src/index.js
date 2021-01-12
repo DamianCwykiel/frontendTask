@@ -13,8 +13,7 @@ const checkButton = document.querySelector('[data-check-button]');
 const downloadButton = document.querySelector('[data-download-button]');
 const message = document.querySelector('[data-message-alert]');
 const fileInput = document.querySelector('[data-file-input]');
-const fileButton = document.querySelector('[data-label-for-fileInput]');
-const fileSpan = document.getElementById('file-span')
+const fileButton = document.querySelector('[data-label]');
 
 const verifier = (() => {
 
@@ -55,15 +54,15 @@ const verifier = (() => {
     const fileLoader = (() => {
         if (fileInput.files.length == 0){
             // alert('load a file');
-            message.innerHTML = "Załaduj plik do obliczenia skrótu!";
-            fileButton.innerHTML = "Załaduj plik!";
+            message.innerHTML = "Load a file to calculate the MD5 hash!";
+            fileButton.innerHTML = "Load a file!";
             fileButtonMsg();
             fileButton.style.background = "#B22222";
             fileButton.style.borderBottom = "5px solid #8B0000";
             badMessage();   
             return;
         } else if (fileInput.files.length == 1 ) {
-            fileButton.innerHTML = "Plik załadowany";
+            fileButton.innerHTML = "File loaded correctly";
             // alert('file loaded');
             fileButtonMsg();
             fileButton.style.background = "#008000";
@@ -102,7 +101,7 @@ const verifier = (() => {
                     processNextPart(); 
                     return;
                 };
-            
+                //MD5 hash
                 def.resolve({
                     hashResult: hashAlgorithm.end(),
                     });
@@ -130,7 +129,7 @@ const verifier = (() => {
             
                 const file = input.files[0];
                 const bufferSize = Math.pow(1024, 2) * 10;
-
+                // calculate and show MD5 hash
                 calculateMD5Hash(file, bufferSize, checkInput).then(
                 ((hashResult) => {
                     //check if fileInput is not empty
@@ -162,11 +161,11 @@ const verifier = (() => {
                     //if compared successfully show up the message and a downloadButton
                     //if not equal show up a fail message and hide the downloadButton   
                     if (hash[0] === hash[1] && addressInput.value !== '') {
-                        message.innerHTML = `Skrót prawidłowy`;
+                        message.innerHTML = `MD5 hash correct`;
                         goodMessage();
                         clear();
                     }  else if (hash[0] !== hash[1] && checkInput.value !== '') {
-                        message.innerHTML = `Skrót nieprawidłowy`;
+                        message.innerHTML = `MD5 hash not correct!`;
                         badMessage();
                         downloadButton.style.display = "none";
                         checkInput.style.border = "none";
@@ -175,13 +174,14 @@ const verifier = (() => {
                     } else if (addressInput.value === '' && checkInput.value === '') {
                         checkInput.style.border = "1.4px solid #FF0000";
                         addressInput.style.border = "1.4px solid #FF0000";
-                        message.innerHTML = "Pola nie mogą być puste!";
+                        message.innerHTML = "Fields cannot be empty!";
                         badMessage();
                         downloadButton.style.display = "none";
                         return;
-                    } else if (addressInput.value === '') {
+                    } else if (addressInput.value === '' && checkInput.value !== '') {
                         // alert('adres nie może być pusty');
-                        message.innerHTML = 'Pole adresu nie może być puste';
+                        message.innerHTML = 'Address cannot be empty!';
+                        checkInput.style.border = "none";
                         badMessage();
                     } else  {
                         const myJson = JSON.stringify(hashResult).toLowerCase();

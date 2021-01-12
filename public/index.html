@@ -4,30 +4,32 @@
         <meta charset="utf-8">
         <meta http-equiv="X-Ua-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui, shrink-to-fit=no">
-        <title>frotendTask</title>
+        <title>Md5-Calculator</title>
         <link href="/img/favicon.ico" rel="icon" type="image/ico">
         <link href="https://fonts.googleapis.com/css?family=Spectral&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="header">
             <div class="container">
-                <h1 class="header__title">frontendTask</h1>
-                <h2 class="header__subtitle">verify the file</h2>
+                <h1 class="header__title">MD5-Calculator</h1>
+                <h2 class="header__subtitle">load & verify your file</h2>
             </div>
         </div>
         <div class="actions">
             <div data-message-alert id ="message"></div>
-            <label data-label-for-fileInput for="file" class ="button3">Załaduj plik</label>
+            <label data-label for="file" class ="button3">Load a file</label>
             <input data-file-input type="file" id="file">
         </div>
         <div class="container">
             <div id="task"></div>
-            <form method="get" id="frontendtask" enctype="multipart/form-data">
+            <form method="get" id="md5calculator" enctype="multipart/form-data">
                 <input data-address-input type="text" class="input1" id="url" placeholder="Adres" name = "name" >
                 <input data-check-input type="data" class="input2" id="check-input" placeholder="Skrót" name="text" >
-                <button data-check-button class="button1" id="check-button">Sprawdź</button>
-                <button data-download-button class="button2" id="download-button" type="submit">Pobierz</button>
             </form>
+            <div id ="button-container">
+                <button data-check-button class="button1" id="check-button">Check</button>
+                <button data-download-button class="button2" id="download-button" type="submit">Download</button>
+            </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/q.js/1.4.1/q.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/spark-md5/2.0.2/spark-md5.min.js"></script>

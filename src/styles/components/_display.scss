@@ -31,6 +31,11 @@
     padding: $md;
 }
 
+#md5calculator {
+    padding: 5rem 0;
+    text-align: center;
+}
+
 #message {
     align-items: center;
     border: none;
@@ -44,28 +49,75 @@
     min-height: $md-ex-lg;
     padding: $md 1.6rem;
     justify-content: center; 
-    font-style: italic;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 25vw;
 }
 
 //MEDIA QUERIES
+@media (min-width: 300px) and (orientation: portrait) {
+    .button1 {
+        padding: 3rem 2rem;
+        width: 10rem; 
+    }
+    .button2 {
+        justify-content: center;
+        width: 15rem;
+    }
+    .button3 {
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+    #button-container {
+        flex-direction: column;
+        max-width: 100vw;
+    }
+    #message {
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+}
+
 @media (max-width: 900px) and (orientation: landscape) {
     html {
         font-size: 70%;
-      }
+    }
     body{
         text-align: center;
     }
     .container {
         justify-content: center;
       }
-      .button {
-        margin: 0 0 2rem 0;
-        padding: $md;
-    }
     .input {
         font-size: 1.8rem;
         height: 5rem;
         padding: $md .5rem;
         min-width: $lg-sm;
+    }
+    #message {
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+    .button1 {
+        padding: 3rem 2rem;
+        width: 10rem; 
+    }
+    .button2 {
+        justify-content: center;
+        width: 15rem;
+    }
+    .button3 {
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+    #button-container {
+        flex-direction: row;
+        width: 100vw;
     }
 }
